@@ -10,4 +10,47 @@
 
 @implementation BNRStudent
 
+-(void)setName:(NSString *) name
+{
+    studentName= name;
+}
+
+-(void)setGrade:(int) grade
+{
+    studentGrade = grade;
+}
+
+-(int)getGrade
+{
+    return studentGrade;
+}
+
+-(NSString *)getStudentName
+{
+    return studentName;
+}
+
+-(void)addDailyScore
+{
+    
+}
+
+-(void)addCumulativeScore
+{
+    
+}
+
+-(int)getDailyScore
+{
+    return dailyScore;
+}
+
+-(int)getCumulativeScore
+{
+    return cumulativeScore;
+}
+
+
+
+
 @end

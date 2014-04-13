@@ -35,7 +35,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2pz-XF-uhl">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Student" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2pz-XF-uhl">
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -56,7 +56,9 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Students" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="138-kF-xcz"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +97,96 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="64"/>
+        </scene>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="zSj-gs-MIf">
+            <objects>
+                <viewController title="Detail" id="0Qd-VM-AwI" customClass="BNRDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ea-40-wph"/>
+                        <viewControllerLayoutGuide type="bottom" id="4dN-Im-2zV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fqk-P5-0Xa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nea-H5-GmR">
+                                <rect key="frame" x="20" y="276" width="280" height="17"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nea-H5-GmR" secondAttribute="trailing" constant="20" symbolic="YES" id="0N5-FR-h7t"/>
+                            <constraint firstItem="nea-H5-GmR" firstAttribute="centerY" secondItem="Fqk-P5-0Xa" secondAttribute="centerY" id="Gcy-GS-6Uo"/>
+                            <constraint firstItem="nea-H5-GmR" firstAttribute="leading" secondItem="Fqk-P5-0Xa" secondAttribute="leading" constant="20" symbolic="YES" id="dHD-My-bqH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="wwy-Id-IKO"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="nea-H5-GmR" id="UIP-0V-7gj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gX-xU-tAN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="64"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yUr-uV-O27">
+            <objects>
+                <viewController id="lI3-wE-sha" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A37-P8-PVK"/>
+                        <viewControllerLayoutGuide type="bottom" id="GTd-Th-N2P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T0B-ix-uXM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Hn-l1-Lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="57"/>
+        </scene>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="ek3-mB-J5W">
+            <objects>
+                <viewController title="Detail" id="djH-u6-r6C" customClass="BNRDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Wk-yk-t91"/>
+                        <viewControllerLayoutGuide type="bottom" id="4iA-6F-nyc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dVE-Lu-GFx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TLc-jv-Xzv">
+                                <rect key="frame" x="20" y="276" width="280" height="17"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TLc-jv-Xzv" firstAttribute="leading" secondItem="dVE-Lu-GFx" secondAttribute="leading" constant="20" symbolic="YES" id="TAJ-6T-yJs"/>
+                            <constraint firstItem="TLc-jv-Xzv" firstAttribute="centerY" secondItem="dVE-Lu-GFx" secondAttribute="centerY" id="kuF-RG-6QV"/>
+                            <constraint firstAttribute="trailing" secondItem="TLc-jv-Xzv" secondAttribute="trailing" constant="20" symbolic="YES" id="pcH-dF-UaA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="ZUR-Ua-U4l"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="TLc-jv-Xzv" id="q2n-01-1n1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFu-FQ-mlf" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="64"/>
         </scene>

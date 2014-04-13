@@ -18,6 +18,8 @@
 -(void)setGrade:(int) grade;
 -(int)getGrade;
 -(NSString *)getStudentName;
+-(void)addDailyScore;
+-(void)addCumulativeScore;
 -(int)getDailyScore;
 -(int)getCumulativeScore;
 
