@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23A6AD619035D120044408D /* BNRCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D23A6AD519035D120044408D /* BNRCustomCell.m */; };
 		D2FEB42E18F5BB0A00D02E77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FEB42D18F5BB0A00D02E77 /* Foundation.framework */; };
 		D2FEB43018F5BB0A00D02E77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FEB42F18F5BB0A00D02E77 /* CoreGraphics.framework */; };
 		D2FEB43218F5BB0A00D02E77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FEB43118F5BB0A00D02E77 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D23A6AD419035D120044408D /* BNRCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCustomCell.h; sourceTree = "<group>"; };
+		D23A6AD519035D120044408D /* BNRCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCustomCell.m; sourceTree = "<group>"; };
 		D2FEB42A18F5BB0A00D02E77 /* ParticipationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParticipationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FEB42D18F5BB0A00D02E77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2FEB42F18F5BB0A00D02E77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 				D2FEB43C18F5BB0B00D02E77 /* BNRAppDelegate.h */,
 				D2FEB43D18F5BB0B00D02E77 /* BNRAppDelegate.m */,
 				D2FEB43F18F5BB0B00D02E77 /* Main.storyboard */,
+				D23A6AD419035D120044408D /* BNRCustomCell.h */,
+				D23A6AD519035D120044408D /* BNRCustomCell.m */,
 				D2FEB44218F5BB0B00D02E77 /* BNRMasterViewController.h */,
 				D2FEB44318F5BB0B00D02E77 /* BNRMasterViewController.m */,
 				D2FEB44518F5BB0B00D02E77 /* BNRDetailViewController.h */,
@@ -263,6 +268,7 @@
 				D2FEB44718F5BB0B00D02E77 /* BNRDetailViewController.m in Sources */,
 				D2FEB43A18F5BB0B00D02E77 /* main.m in Sources */,
 				D2FEB44418F5BB0B00D02E77 /* BNRMasterViewController.m in Sources */,
+				D23A6AD619035D120044408D /* BNRCustomCell.m in Sources */,
 				D2FEB46718F5C2A700D02E77 /* BNRStudent.m in Sources */,
 				D2FEB43E18F5BB0B00D02E77 /* BNRAppDelegate.m in Sources */,
 			);
@@ -473,6 +479,7 @@
 				D2FEB46118F5BB0C00D02E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2FEB46218F5BB0C00D02E77 /* Build configuration list for PBXNativeTarget "ParticipationTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +488,7 @@
 				D2FEB46418F5BB0C00D02E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

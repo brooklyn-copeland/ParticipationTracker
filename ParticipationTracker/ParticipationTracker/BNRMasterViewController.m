@@ -9,6 +9,7 @@
 #import "BNRMasterViewController.h"
 
 #import "BNRDetailViewController.h"
+#import "BNRCustomCell.h"
 
 @interface BNRMasterViewController () {
     NSMutableArray *_objects;
@@ -62,10 +63,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    BNRCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.titleLabel.text = 
+    
     return cell;
 }
 
