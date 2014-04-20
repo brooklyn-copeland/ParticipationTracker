@@ -28,4 +28,8 @@
 
 - (IBAction)stepperValueChanged:(id)sender {
 }
+- (IBAction)touchDecrease:(id)sender {
+}
+- (IBAction)touchIncrease:(id)sender {
+}
 @end
