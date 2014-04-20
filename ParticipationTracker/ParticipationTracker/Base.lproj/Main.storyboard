@@ -36,15 +36,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cie-To-QUa">
-                                            <rect key="frame" x="193" y="7" width="94" height="29"/>
+                                            <rect key="frame" x="20" y="7" width="94" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
-                                                <action selector="touchDecrease:" destination="m0d-ak-lc9" eventType="touchDown" id="vRi-rc-ClZ"/>
-                                                <action selector="touchIncrease:" destination="m0d-ak-lc9" eventType="touchUpInside" id="f84-AI-p6y"/>
+                                                <action selector="stepperValueChanged:" destination="m0d-ak-lc9" eventType="valueChanged" id="x9v-xg-r9l"/>
                                             </connections>
                                         </stepper>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-8h-Dds">
-                                            <rect key="frame" x="15" y="11" width="99" height="21"/>
+                                            <rect key="frame" x="131" y="11" width="143" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -54,6 +53,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="stepper" destination="Cie-To-QUa" id="ENf-8t-HCy"/>
                                     <outlet property="titleLabel" destination="z6C-8h-Dds" id="gcK-cc-jbL"/>
                                     <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>

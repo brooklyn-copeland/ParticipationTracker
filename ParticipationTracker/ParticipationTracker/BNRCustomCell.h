@@ -11,7 +11,7 @@
 @interface BNRCustomCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
-- (IBAction)touchDecrease:(id)sender;
 
-- (IBAction)touchIncrease:(id)sender;
+- (IBAction)stepperValueChanged:(id)sender;
 
+@end

@@ -11,6 +11,7 @@
 @interface BNRStudent : NSObject{
     int studentGrade;
     NSString *studentName;
+    int score;
     int cumulativeScore;
     int dailyScore;
 }
