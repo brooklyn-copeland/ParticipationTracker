@@ -7,6 +7,7 @@
 //
 
 #import "BNRCustomCell.h"
+#import "BNRStudent.h"
 
 @implementation BNRCustomCell
 
@@ -26,7 +27,10 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)stepperValueChanged:(id)sender {
-    int stepperValue = [sender value];
+
+- (IBAction)stepperValueChanged:(UIStepper *)sender {
+    
+    
+    _stepperValue = [sender value];
 }
 @end

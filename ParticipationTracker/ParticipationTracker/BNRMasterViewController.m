@@ -9,14 +9,50 @@
 #import "BNRMasterViewController.h"
 
 #import "BNRDetailViewController.h"
+#import "BNRAddClassViewController.h"
 #import "BNRCustomCell.h"
+#import "BNRClass.h"
 
 @interface BNRMasterViewController () {
     NSMutableArray *_objects;
+    
 }
+
+@property (nonatomic, strong) NSMutableArray *classes;
+
 @end
 
 @implementation BNRMasterViewController
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue
+{
+    // unwind segue
+    NSLog(@"Segue unwound");
+    
+    BNRAddClassViewController *addViewController = segue.sourceViewController;
+    
+    // get the data
+    NSString *newClassName= addViewController.inputClassName.text;
+    
+    NSString *newClassBlock= addViewController.inputClassBlock.text;
+    
+    // create a new class object
+    BNRClass *class = [[BNRClass alloc] initWithName:newClassName andBlock:newClassBlock];
+    // add it to the class array
+    [self.classes addObject:class];
+    
+    for(BNRStudent *d in _classes) {
+        NSLog(@"%@", d.getStudentName);
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (NSMutableArray *)students
+{
+    if (_classes == nil) _classes = [[NSMutableArray alloc] init];
+    return _classes;
+}
 
 - (void)awakeFromNib
 {
@@ -29,8 +65,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,14 +94,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.students.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     BNRCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    cell.titleLabel.text = 
+    NSLog(@"Cell added");
+    BNRClass *class = [self.classes objectAtIndex:indexPath.row];
+    cell.titleLabel.text = class.className;
+    
+    cell.viewController = self;
+    
     
     return cell;
 }
@@ -106,9 +147,22 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        BNRStudent *object = self.students[indexPath.row];
+        
+        BNRDetailViewController *dvc = (BNRDetailViewController *)[segue destinationViewController];
+        NSLog(@"%@",dvc);
+        [dvc setDetailItem:object];
+        
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *dvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BNRDetailViewController"];
+    BNRStudent *object = self.students[indexPath.row];
+    [dvc setDetailItem:object];
+    
+    [self.navigationController pushViewController:dvc animated:YES];
 }
 
 @end

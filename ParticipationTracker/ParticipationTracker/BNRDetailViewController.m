@@ -8,11 +8,15 @@
 
 #import "BNRDetailViewController.h"
 
+#import "BNRCustomCell.h"
+
 @interface BNRDetailViewController ()
 - (void)configureView;
 @end
 
 @implementation BNRDetailViewController
+
+@synthesize detailItem = _detailItem;
 
 #pragma mark - Managing the detail item
 
@@ -30,9 +34,15 @@
 {
     // Update the user interface for the detail item.
 
+    
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        //change the label name to the Grade of the student
+        
+        //self.mST.text= [[self.detailItem]
+        //NSMutableArray *array = [BNRClass getClassSta
+        
     }
+    
 }
 
 - (void)viewDidLoad

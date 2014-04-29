@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BNRMasterViewController : UITableViewController
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+
 
 @end

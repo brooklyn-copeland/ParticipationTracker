@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface BNRStudent : NSObject{
-    int studentGrade;
-    NSString *studentName;
-    int score;
-    int cumulativeScore;
-    int dailyScore;
+
+    
 }
+
+@property (nonatomic, strong) NSString *studentName;
+@property int studentGrade;
+@property int dailyScore;
+@property int overallScore;
+
 -(void)setName:(NSString *) name;
 -(void)setGrade:(int) grade;
 -(int)getGrade;
@@ -23,5 +26,8 @@
 -(void)addCumulativeScore;
 -(int)getDailyScore;
 -(int)getCumulativeScore;
+
+
+- (id)initWithName:(NSString *)name andGrade:(int)grade;
 
     @end

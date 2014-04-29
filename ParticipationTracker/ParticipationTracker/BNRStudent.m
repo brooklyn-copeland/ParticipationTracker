@@ -7,47 +7,60 @@
 //
 
 #import "BNRStudent.h"
+#import "BNRCustomCell.h"
 
 @implementation BNRStudent
 
+- (id)initWithName:(NSString *)name andGrade:(int)grade
+{
+    if (self = [super init]) {
+        // custom setup
+        _studentName=name;
+        _studentGrade=grade;
+    }
+    return self;
+}
+
 -(void)setName:(NSString *) name
 {
-    studentName= name;
+    _studentName = name;
 }
 
 -(void)setGrade:(int) grade
 {
-    studentGrade = grade;
+    _studentGrade = grade;
 }
 
 -(int)getGrade
 {
-    return studentGrade;
+    return _studentGrade;
 }
 
 -(NSString *)getStudentName
 {
-    return studentName;
+    return _studentName;
 }
 
 -(void)addDailyScore
 {
     
+    
+    
 }
 
 -(void)addCumulativeScore
 {
-    
+    _overallScore += _dailyScore;
 }
 
 -(int)getDailyScore
 {
-    return dailyScore;
+    return _dailyScore;
 }
 
 -(int)getCumulativeScore
 {
-    return cumulativeScore;
+    return _overallScore;
 }
 
 

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BNRMasterViewController.h"
 
 @interface BNRCustomCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+@property (nonatomic) int stepperValue;
+@property (weak, nonatomic) BNRMasterViewController *viewController;
 
-- (IBAction)stepperValueChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
 
 @end
