@@ -7,7 +7,7 @@
 //
 
 #import "BNRDetailViewController.h"
-
+#import "BNRClass.h"
 #import "BNRCustomCell.h"
 
 @interface BNRDetailViewController ()
@@ -36,10 +36,27 @@
 
     
     if (self.detailItem) {
-        //change the label name to the Grade of the student
-        
-        //self.mST.text= [[self.detailItem]
-        //NSMutableArray *array = [BNRClass getClassSta
+        //add week arrays
+        NSMutableArray *mArray = [BNRClass getClassStartAndEndTimeM:self.detailItem.classBlock];
+        NSMutableArray *tArray = [BNRClass getClassStartAndEndTimeT:self.detailItem.classBlock];
+        NSMutableArray *wArray = [BNRClass getClassStartAndEndTimeW:self.detailItem.classBlock];
+        NSMutableArray *thArray = [BNRClass getClassStartAndEndTimeTH:self.detailItem.classBlock];
+        NSMutableArray *fArray = [BNRClass getClassStartAndEndTimeF:self.detailItem.classBlock];
+        //change monday label
+        self.mST.text= [mArray objectAtIndex:0];
+        self.mET.text = [mArray objectAtIndex:1];
+        //change tues label
+        self.tST.text= [tArray objectAtIndex:0];
+        self.tET.text = [tArray objectAtIndex:1];
+        //change wed label
+        self.wST.text= [wArray objectAtIndex:0];
+        self.wET.text = [wArray objectAtIndex:1];
+        //change th label
+        self.thST.text= [thArray objectAtIndex:0];
+        self.thET.text = [thArray objectAtIndex:1];
+        //change fri label
+        self.fST.text= [fArray objectAtIndex:0];
+        self.fET.text = [fArray objectAtIndex:1];
         
     }
     

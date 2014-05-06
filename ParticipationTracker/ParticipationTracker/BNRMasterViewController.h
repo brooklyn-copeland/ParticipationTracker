@@ -10,6 +10,8 @@
 
 @interface BNRMasterViewController : UITableViewController
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+- (IBAction)cancel:(UIStoryboardSegue *)segue;
+//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 
 @end

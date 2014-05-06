@@ -24,6 +24,11 @@
 
 @implementation BNRMasterViewController
 
+- (IBAction)cancel:(UIStoryboardSegue *)segue
+{
+    [self.tableView reloadData];
+}
+
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
     // unwind segue
@@ -41,9 +46,7 @@
     // add it to the class array
     [self.classes addObject:class];
     
-    for(BNRStudent *d in _classes) {
-        NSLog(@"%@", d.getStudentName);
-    }
+   
     
     [self.tableView reloadData];
 }
@@ -100,14 +103,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    BNRCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSLog(@"Cell added");
-    BNRClass *class = [self.classes objectAtIndex:indexPath.row];
-    cell.titleLabel.text = class.className;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.viewController = self;
-    
-    
+    BNRClass *object = _classes[indexPath.row];
+    cell.textLabel.text = [object description];
     return cell;
 }
 
@@ -147,7 +146,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        BNRStudent *object = self.students[indexPath.row];
+        BNRClass *object = self.classes[indexPath.row];
         
         BNRDetailViewController *dvc = (BNRDetailViewController *)[segue destinationViewController];
         NSLog(@"%@",dvc);
@@ -159,7 +158,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BNRDetailViewController *dvc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BNRDetailViewController"];
-    BNRStudent *object = self.students[indexPath.row];
+    BNRClass *object = self.classes[indexPath.row];
     [dvc setDetailItem:object];
     
     [self.navigationController pushViewController:dvc animated:YES];

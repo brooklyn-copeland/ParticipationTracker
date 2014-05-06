@@ -28,3 +28,4 @@
 
 //@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
+@end
